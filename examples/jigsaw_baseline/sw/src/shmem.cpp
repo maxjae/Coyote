@@ -19,7 +19,8 @@ static void *shmem = NULL;
 static volatile uint8_t *read_doorbell = NULL;
 static volatile uint8_t *write_doorbell = NULL;
 
-static int create_or_open_shmem_file() {
+static int create_or_open_shmem_file()
+{
     int fd = open(SHMEM_FILE, O_RDWR | O_CREAT, 0666);
     if (fd < 0) {
         perror("Failed to open or create shared memory file");
